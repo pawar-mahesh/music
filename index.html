@@ -22,8 +22,21 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/music/apple-touch-icon.png" />
     <link rel="manifest" href="/music/manifest.webmanifest" />
     <title>Music</title>
-    <script type="module" crossorigin src="/music/assets/index-kt0cca95.js"></script>
-    <link rel="stylesheet" crossorigin href="/music/assets/index-DMCOYh2k.css">
+    <!-- Counterpart to public/404.html: restores the deep-linked path it
+         stashed before the app below reads window.location, so a direct
+         hit or a shared link to e.g. /music/playlist/some-slug/pl.xxx
+         lands on that route instead of always resetting to Home. -->
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirectPath;
+        delete sessionStorage.redirectPath;
+        if (redirect) {
+          history.replaceState(null, "", redirect);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/music/assets/index-Cmc6v8AJ.js"></script>
+    <link rel="stylesheet" crossorigin href="/music/assets/index-rbvgYtmQ.css">
   </head>
   <body>
     <div id="root"></div>

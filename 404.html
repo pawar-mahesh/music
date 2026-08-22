@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Music</title>
+    <!-- GitHub Pages serves this for any path with no matching file --
+         which is every deep link (e.g. /music/playlist/some-slug/pl.xxx),
+         since the SPA's own routes only exist client-side. Stash the
+         intended path and bounce to the real index.html, which restores
+         it (see the inline script in index.html) before the app reads
+         window.location. -->
+    <script>
+      sessionStorage.redirectPath = location.pathname + location.search + location.hash;
+      location.replace("/music/");
+    </script>
+  </head>
+  <body></body>
+</html>
