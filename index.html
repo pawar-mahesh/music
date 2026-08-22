@@ -1,44 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/svg+xml" href="/music/music.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/music-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/music-16.png" />
+    <link rel="icon" type="image/x-icon" href="/music.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/music/apple-touch-icon.png" />
+    <link rel="manifest" href="/music/site.webmanifest" />
+
+    <!-- Viewport and Safe Area Handling -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
-    <meta name="theme-color" content="#1c1c1e" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <!-- Without these, launching from an "Add to Home Screen" icon still opens
-         regular Safari chrome (address bar + opaque status bar) instead of a
-         real full-screen app — no amount of page CSS can remove that chrome. -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <!-- The name shown under the icon once added to the iOS/Android home
-         screen -- without it, iOS falls back to the page title truncated to
-         whatever fits, which can end up looking cut off. -->
-    <meta name="apple-mobile-web-app-title" content="Music" />
-    <link rel="icon" type="image/svg+xml" href="/music/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/music/favicon-96x96.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/music/apple-touch-icon.png" />
-    <link rel="manifest" href="/music/manifest.webmanifest" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
     <title>Music</title>
-    <!-- Counterpart to public/404.html: restores the deep-linked path it
-         stashed before the app below reads window.location, so a direct
-         hit or a shared link to e.g. /music/playlist/some-slug/pl.xxx
-         lands on that route instead of always resetting to Home. -->
-    <script>
-      (function () {
-        var redirect = sessionStorage.redirectPath;
-        delete sessionStorage.redirectPath;
-        if (redirect) {
-          history.replaceState(null, "", redirect);
-        }
-      })();
-    </script>
-    <script type="module" crossorigin src="/music/assets/index-Cmc6v8AJ.js"></script>
-    <link rel="stylesheet" crossorigin href="/music/assets/index-rbvgYtmQ.css">
+    <script type="module" crossorigin src="/music/assets/index-DVs1MIya.js"></script>
+    <link rel="stylesheet" crossorigin href="/music/assets/index-DD7AoKsq.css">
   </head>
-  <body>
+  <body style="background-color: #000; color: white">
     <div id="root"></div>
   </body>
 </html>
